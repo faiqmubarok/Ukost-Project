@@ -5,10 +5,19 @@
 @layer components {
     /* Navbar */
     .li-navbar-ariaCurrent{
-        @apply block py-2 px-3 text-white bg-bluePrimary rounded md:bg-transparent md:text-bluePrimary md:p-0;
+        @apply block py-2 px-3 text-white bg-bluePrimary rounded md:bg-transparent md:text-bluePrimary md:p-0 text-sm;
+    }
+    .li-button{
+        @apply flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-bluePrimary md:p-0 md:w-auto text-sm;
+    }
+    .li-button-before{
+        @apply flex items-center justify-between w-full py-2 px-3 text-gray-50 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-bluePrimary md:p-0 md:w-auto text-sm;
     }
     .li-navbar{
-        @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0;
+        @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0 text-sm;
+    }
+    .li-navbar-before{
+        @apply block py-2 px-3 text-gray-50 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0 text-sm;
     }
 
 }

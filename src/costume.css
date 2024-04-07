@@ -1,3 +1,19 @@
 #card-recomendation::-webkit-scrollbar {
   width: 0px;
 }
+
+.container-tagline{
+    text-align: center;
+}
+
+@media (min-width : 768px){
+    .container-tagline {
+        text-align: start;
+    }
+    section div.container-section{
+        padding-top: 140px;
+    }
+    section ul.container-feature{
+        justify-content: start;
+    }
+}
