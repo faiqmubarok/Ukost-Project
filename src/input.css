@@ -20,4 +20,9 @@
         @apply block py-2 px-3 text-gray-50 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0 text-sm;
     }
 
+    /* Kampus Icon */
+    .container-campus-icon{
+        @apply flex border gap-2 px-5 py-6 rounded-lg bg-white hover:shadow-md hover:scale-105 duration-300 transition-all  items-center lg:px-7 md:gap-3;
+    }
+
 }

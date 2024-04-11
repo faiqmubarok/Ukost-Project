@@ -1,6 +1,9 @@
 #card-recomendation::-webkit-scrollbar {
   width: 0px;
 }
+#card-budget::-webkit-scrollbar {
+  width: 0px;
+}
 
 .container-tagline{
     text-align: center;
