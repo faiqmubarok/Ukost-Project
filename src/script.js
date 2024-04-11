@@ -12,8 +12,8 @@ window.addEventListener('scroll', function () {
     var liBtn = document.getElementById('dropdownNavbarLink');
     var image = document.querySelectorAll('#navbar a img');
     if (window.scrollY > 10) {
-        navbar.classList.add('bg-white');
-        navbar.classList.remove('bg-[#DAE7ED]');
+        navbar.classList.add('bg-[#DAE7ED]');
+        navbar.classList.remove('bg-transparent');
         navbar.classList.add('border-b');
         navbar.classList.add('border-gray-200');
         image[1].classList.add('hidden');
@@ -27,8 +27,8 @@ window.addEventListener('scroll', function () {
             }
         });
     } else {
-        navbar.classList.remove('bg-white');
-        navbar.classList.add('bg-[#DAE7ED]');
+        navbar.classList.remove('bg-[#DAE7ED]');
+        navbar.classList.add('bg-transparent');
         navbar.classList.remove('border-b');
         navbar.classList.remove('border-gray-200');
         image[0].classList.add('hidden');
