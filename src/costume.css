@@ -5,6 +5,10 @@
   width: 0px;
 }
 
+#other-type::-webkit-scrollbar{
+    width: 0px;
+}
+
 .container-tagline{
     text-align: center;
 }

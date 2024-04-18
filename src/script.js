@@ -1,9 +1,9 @@
 document.getElementById('scrollLeftBtn').addEventListener('click', function() {
-    document.getElementById('card-recomendation').scrollBy({ left: -266, behavior: 'smooth' });
+    document.getElementById('card-recomendation').scrollBy({ left: -275, behavior: 'smooth' });
 });
 
 document.getElementById('scrollRightBtn').addEventListener('click', function() {
-    document.getElementById('card-recomendation').scrollBy({ left: 266, behavior: 'smooth' });
+    document.getElementById('card-recomendation').scrollBy({ left: 275, behavior: 'smooth' });
 });
 
 window.addEventListener('scroll', function () {
@@ -43,3 +43,66 @@ window.addEventListener('scroll', function () {
         });
     }
 });
+
+
+// Open Drawer + Login
+let btnDrawer = document.getElementById('open-drawer');
+let overlay = document.getElementById('overlay');
+let contentDrawer = document.getElementById('content-drawer');
+let btnClose = document.querySelectorAll('button.btn-close-drawer');
+let body = document.body;
+
+function openDrawer(){
+    overlay.classList.remove('hidden');
+    contentDrawer.classList.remove('hidden');
+    setTimeout(() => {
+        contentDrawer.classList.remove('scale-0');
+    }, 10);
+    body.classList.add('overflow-hidden');
+}
+
+function closeDrawer(){
+    overlay.classList.add('hidden');
+    contentDrawer.classList.add('hidden');
+    contentDrawer.classList.add('scale-0');
+    body.classList.remove('overflow-hidden');
+}
+
+btnDrawer.addEventListener('click', openDrawer);
+btnClose.forEach(function(button){
+    button.addEventListener('click', closeDrawer);
+})
+overlay.addEventListener('click', closeDrawer);
+
+
+
+var buttons = document.querySelectorAll('.button-hide');
+buttons.forEach(function(button){
+    button.addEventListener('click', function(){
+        var input = this.parentElement.querySelector('input');
+        var hideIcon = this.querySelector('.hide');
+        var unhideIcon = this.querySelector('.unhide');
+
+        if(input.type === 'password'){
+            input.type = 'text';
+            hideIcon.classList.add('hidden');
+            unhideIcon.classList.remove('hidden');
+        }else{
+            input.type = 'password';
+            hideIcon.classList.remove('hidden');
+            unhideIcon.classList.add('hidden');
+        }
+    })
+})
+
+// Product.html
+function toggleReadMore(button) {
+    var content = button.previousElementSibling;
+    if (content.classList.contains("max-h-20") && content.classList.contains("overflow-hidden")) {
+        content.classList.remove("max-h-20", "overflow-hidden");
+        button.innerHTML = 'Tampilkan Lebih Sedikit';
+    } else {
+        content.classList.add("max-h-20", "overflow-hidden");
+        button.innerHTML = 'Baca Selengkapnya...';
+    }
+}
