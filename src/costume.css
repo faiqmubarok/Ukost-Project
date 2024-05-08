@@ -5,22 +5,36 @@
   width: 0px;
 }
 
-#other-type::-webkit-scrollbar{
-    width: 0px;
+#other-type::-webkit-scrollbar {
+  width: 0px;
 }
 
-.container-tagline{
-    text-align: center;
+.container-tagline {
+  text-align: center;
 }
 
-@media (min-width : 768px){
-    .container-tagline {
-        text-align: start;
-    }
-    section div.container-section{
-        padding-top: 140px;
-    }
-    section ul.container-feature{
-        justify-content: start;
-    }
+.input-field-otp input::-webkit-inner-spin-button,
+.input-field-otp input::-webkit-outer-spin-button {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container-tagline {
+    text-align: start;
+  }
+  section div.container-section {
+    padding-top: 140px;
+  }
+  section ul.container-feature {
+    justify-content: start;
+  }
+}
+
+/* Slider Range */
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  -webkit-appearance: none;
+  /* @apply w-6 h-6 appearance-none pointer-events-auto; */
 }

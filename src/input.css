@@ -3,26 +3,25 @@
 @tailwind utilities;
 
 @layer components {
-    /* Navbar */
-    .li-navbar-ariaCurrent{
-        @apply block py-2 px-3 text-white bg-bluePrimary rounded md:bg-transparent md:text-bluePrimary md:p-0 text-sm;
-    }
-    .li-button{
-        @apply flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-bluePrimary md:p-0 md:w-auto text-sm;
-    }
-    .li-button-before{
-        @apply flex items-center justify-between w-full py-2 px-3 text-gray-50 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-bluePrimary md:p-0 md:w-auto text-sm;
-    }
-    .li-navbar{
-        @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0 text-sm;
-    }
-    .li-navbar-before{
-        @apply block py-2 px-3 text-gray-50 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-bluePrimary md:p-0 text-sm;
-    }
+  /* Navbar */
+  .li-navbar-ariaCurrent {
+    @apply block rounded bg-bluePrimary px-3 py-2 text-sm text-white md:bg-transparent md:p-0 md:text-bluePrimary;
+  }
+  .li-button {
+    @apply flex w-full items-center justify-between rounded px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
+  }
+  .li-button-before {
+    @apply flex w-full items-center justify-between rounded px-3 py-2 text-sm text-gray-50 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
+  }
+  .li-navbar {
+    @apply block rounded px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 md:border-0  md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
+  }
+  .li-navbar-before {
+    @apply block rounded px-3 py-2 text-sm text-gray-50 hover:bg-gray-100 md:border-0  md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
+  }
 
-    /* Kampus Icon */
-    .container-campus-icon{
-        @apply flex border gap-2 px-5 py-6 rounded-lg bg-white hover:shadow-md hover:scale-105 duration-300 transition-all  items-center lg:px-7 md:gap-3;
-    }
-
+  /* Kampus Icon */
+  .container-campus-icon {
+    @apply flex items-center gap-2 rounded-lg border bg-white px-5 py-6 transition-all duration-300 hover:scale-105  hover:shadow-md md:gap-3 lg:px-7;
+  }
 }
