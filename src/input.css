@@ -22,6 +22,37 @@
 
   /* Kampus Icon */
   .container-campus-icon {
-    @apply flex items-center gap-2 rounded-lg border bg-white px-5 py-6 transition-all duration-300 hover:scale-105  hover:shadow-md md:gap-3 lg:px-7;
+    @apply flex items-center gap-2 rounded-lg border bg-white px-3 py-6 transition-all duration-300 hover:scale-105  hover:shadow-md md:gap-3 md:px-5 lg:px-7;
   }
+
+  /* List Jumbotron */
+  .list-jumbotron-active{
+    @apply flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 text-bluePrimary cursor-pointer;
+  }
+  .list-jumbotron-pasif{
+    @apply flex items-center gap-1 rounded-lg px-3 py-2 text-gray-100 hover:bg-gray-100 hover:text-bluePrimary focus:outline-none focus:ring-2 focus:ring-blueSecond cursor-pointer;
+  }
+
+  /* List Budget */
+  .list-budget-active{
+    @apply inline-block rounded-lg bg-bluePrimary p-3 text-white shadow-md cursor-pointer;
+  }
+  .list-budget-pasif{
+    @apply inline-block rounded-lg p-3 hover:bg-gray-100 cursor-pointer;
+  }
+
+  /* Search Engine */
+  .list-active{
+    @apply inline-block p-4 text-bluePrimary border-b-2 border-bluePrimary rounded-t-lg hover:cursor-pointer;
+  }
+  .list-other{
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 hover:cursor-pointer;
+  }
+
+  /* Pagination */
+  .active-page {
+    @apply bg-bluePrimary text-white rounded-full; /* Contoh penggunaan kelas Tailwind */
+  }
+  
 }
+
