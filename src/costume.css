@@ -1,12 +1,33 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#skeleton-other-type::-webkit-scrollbar{
+  width: 0px;
+}
+
 #card-recomendation::-webkit-scrollbar {
   width: 0px;
 }
+
+#card-recomendation-skeleton::-webkit-scrollbar{
+  width: 0px;
+}
+
+#card-budget-skeleton::-webkit-scrollbar{
+  width: 0px;
+}
+
 #card-budget::-webkit-scrollbar {
   width: 0px;
 }
 
 #other-type::-webkit-scrollbar {
   width: 0px;
+}
+
+.thumbnail-slider .swiper-slide-thumb-active img {
+  opacity: 1 !important;
 }
 
 .container-tagline {
