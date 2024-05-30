@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#skeleton-other-type::-webkit-scrollbar{
+#skeleton-other-type::-webkit-scrollbar {
   width: 0px;
 }
 
@@ -10,11 +10,11 @@ html {
   width: 0px;
 }
 
-#card-recomendation-skeleton::-webkit-scrollbar{
+#card-recomendation-skeleton::-webkit-scrollbar {
   width: 0px;
 }
 
-#card-budget-skeleton::-webkit-scrollbar{
+#card-budget-skeleton::-webkit-scrollbar {
   width: 0px;
 }
 

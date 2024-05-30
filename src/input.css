@@ -10,6 +10,9 @@
   .li-button {
     @apply flex w-full items-center justify-between rounded px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
   }
+  .li-button-active{
+    @apply flex w-full items-center justify-between rounded px-3 py-2 text-sm text-bluePrimary md:w-auto md:border-0 md:p-0;
+  }
   .li-button-before {
     @apply flex w-full items-center justify-between rounded px-3 py-2 text-sm text-gray-50 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
   }
@@ -20,39 +23,67 @@
     @apply block rounded px-3 py-2 text-sm text-gray-50 hover:bg-gray-100 md:border-0  md:p-0 md:hover:bg-transparent md:hover:text-bluePrimary;
   }
 
+  /* Advance Navbar */
+  .container-index {
+    @apply flex items-center gap-2 lg:gap-5;
+  }
+
+  .container-allProduct {
+    @apply flex w-full items-center justify-between gap-3 md:w-fit lg:gap-7;
+  }
+
+  /* Sidebar */
+  .list-sidebar-pasif {
+    @apply flex items-center rounded-lg px-2 py-4 text-gray-600 hover:bg-gray-100;
+  }
+  .list-sidebar-active {
+    @apply flex items-center rounded-lg px-2 py-4 text-bluePrimary hover:bg-gray-100;
+  }
+
   /* Kampus Icon */
   .container-campus-icon {
     @apply flex items-center gap-2 rounded-lg border bg-white px-3 py-6 transition-all duration-300 hover:scale-105  hover:shadow-md md:gap-3 md:px-5 lg:px-7;
   }
 
   /* List Jumbotron */
-  .list-jumbotron-active{
-    @apply flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 text-bluePrimary cursor-pointer;
-  }
-  .list-jumbotron-pasif{
-    @apply flex items-center gap-1 rounded-lg px-3 py-2 text-gray-100 hover:bg-gray-100 hover:text-bluePrimary focus:outline-none focus:ring-2 focus:ring-blueSecond cursor-pointer;
+  .list-jumbotron-active {
+    @apply flex cursor-pointer items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 text-bluePrimary;
   }
 
-  /* List Budget */
-  .list-budget-active{
-    @apply inline-block rounded-lg bg-bluePrimary p-3 text-white shadow-md cursor-pointer;
+  .list-jumbotron-pasif {
+    @apply flex cursor-pointer items-center gap-1 rounded-lg px-3 py-2 text-gray-100 hover:bg-gray-100 hover:text-bluePrimary focus:outline-none focus:ring-2 focus:ring-blueSecond;
   }
-  .list-budget-pasif{
-    @apply inline-block rounded-lg p-3 hover:bg-gray-100 cursor-pointer;
+
+  /* List Dropdown Navbar */
+  .list-dropdown-active{
+    @apply inline-flex w-full px-4 py-2  bg-bluePrimary text-white;
+  }
+
+  .list-dropdown-pasif{
+    @apply inline-flex w-full px-4 py-2 hover:bg-gray-100;
+  }
+
+
+
+
+  /* List Budget */
+  .list-budget-active {
+    @apply inline-block cursor-pointer rounded-lg bg-bluePrimary p-3 text-white shadow-md;
+  }
+  .list-budget-pasif {
+    @apply inline-block cursor-pointer rounded-lg p-3 hover:bg-gray-100;
   }
 
   /* Search Engine */
-  .list-active{
-    @apply inline-block p-4 text-bluePrimary border-b-2 border-bluePrimary rounded-t-lg hover:cursor-pointer;
+  .list-active {
+    @apply inline-block rounded-t-lg border-b-2 border-bluePrimary p-4 text-bluePrimary hover:cursor-pointer;
   }
-  .list-other{
-    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 hover:cursor-pointer;
+  .list-other {
+    @apply inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:cursor-pointer hover:border-gray-300 hover:text-gray-600;
   }
 
   /* Pagination */
   .active-page {
-    @apply bg-bluePrimary text-white rounded-full; /* Contoh penggunaan kelas Tailwind */
+    @apply rounded-full bg-bluePrimary text-white; /* Contoh penggunaan kelas Tailwind */
   }
-  
 }
-
