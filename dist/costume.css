@@ -1,0 +1,61 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#skeleton-other-type::-webkit-scrollbar {
+  width: 0px;
+}
+
+#card-recomendation::-webkit-scrollbar {
+  width: 0px;
+}
+
+#card-recomendation-skeleton::-webkit-scrollbar {
+  width: 0px;
+}
+
+#card-budget-skeleton::-webkit-scrollbar {
+  width: 0px;
+}
+
+#card-budget::-webkit-scrollbar {
+  width: 0px;
+}
+
+#other-type::-webkit-scrollbar {
+  width: 0px;
+}
+
+.thumbnail-slider .swiper-slide-thumb-active img {
+  opacity: 1 !important;
+}
+
+.container-tagline {
+  text-align: center;
+}
+
+.input-field-otp input::-webkit-inner-spin-button,
+.input-field-otp input::-webkit-outer-spin-button {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container-tagline {
+    text-align: start;
+  }
+  section div.container-section {
+    padding-top: 140px;
+  }
+  section ul.container-feature {
+    justify-content: start;
+  }
+}
+
+/* Slider Range */
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  -webkit-appearance: none;
+  /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+}
