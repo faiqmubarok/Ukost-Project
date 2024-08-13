@@ -106,132 +106,129 @@ export function initializeNavbar (index, allProduct, product) {
 
 
 // Sinkronisasi Navbar & Sidebar
-export function sinkronNavbarSidebar(index, allProduct, product){
-    let navbarIndex = index;
-    let navbarAllProduct = allProduct;
-    let navbarProduct = product;
+export function sinkronNavbarSidebar(index, allProduct, product) {
+  let navbarIndex = index;
+  let navbarAllProduct = allProduct;
+  let navbarProduct = product;
 
   let sidebarItem = document.querySelectorAll('[sidebar-item]');
   let navbarItem = document.querySelectorAll('[navbar-item]');
   let dropdownParentNavbar = document.getElementById('dropdownNavbarLink');
   let dropdownParentSidebar = document.getElementById('dropdownSidebarLink');
-  
-  function syncActiveClass(target){
-    if(navbarIndex){
-      navbarItem.forEach((item, index) => {
-        if (index !== 1 && index !== 2) {
-          if (item.getAttribute('data-target') === target) {
-              item.setAttribute('aria-current', 'page');
-              item.classList.add('li-navbar-ariaCurrent');
-              item.classList.remove('li-navbar-before');
-              dropdownParentNavbar.classList.add('li-button-before');
-              dropdownParentNavbar.classList.remove('li-button-active');
-              dropdownParentNavbar.removeAttribute('aria-current');
-          } else {
-              item.classList.remove('li-navbar-ariaCurrent');
-              item.classList.add('li-navbar-before');
-              item.removeAttribute('aria-current');
-          }
-        } else {
-          if(item.getAttribute('data-target') === target){
-            item.classList.add('list-dropdown-active');
-            item.classList.remove('list-dropdown-pasif');
-            dropdownParentNavbar.classList.remove('li-button-before');
-            dropdownParentNavbar.classList.add('li-button-active');
-            dropdownParentNavbar.setAttribute('aria-current', 'page');
-          }
-          else{
-            item.classList.remove('list-dropdown-active');
-            item.classList.add('list-dropdown-pasif');
-          }
-        }
-      });
-    } else{
-      navbarItem.forEach((item, index) => {
-        if (index !== 1 && index !== 2) {
-          if (item.getAttribute('data-target') === target) {
-              item.setAttribute('aria-current', 'page');
-              item.classList.add('li-navbar-ariaCurrent');
-              item.classList.remove('li-navbar');
-              dropdownParentNavbar.classList.add('li-button');
-              dropdownParentNavbar.classList.remove('li-button-active');
-              dropdownParentNavbar.removeAttribute('aria-current');
-          } else {
-              item.classList.remove('li-navbar-ariaCurrent');
-              item.classList.add('li-navbar');
-              item.removeAttribute('aria-current');
-          }
-        } else {
-          if(item.getAttribute('data-target') === target){
-            item.classList.add('list-dropdown-active');
-            item.classList.remove('list-dropdown-pasif');
-            dropdownParentNavbar.classList.remove('li-button');
-            dropdownParentNavbar.classList.add('li-button-active');
-            dropdownParentNavbar.setAttribute('aria-current', 'page');
-          }
-          else{
-            item.classList.remove('list-dropdown-active');
-            item.classList.add('list-dropdown-pasif');
-          }
-        }
-      });
-    }
-    sidebarItem.forEach((item, index) => {
-      if (index !== 1 && index !== 2) {
-        if(item.getAttribute('data-target') === target){
-          item.setAttribute('aria-current', 'page');
-          item.classList.add('list-sidebar-active');
-          item.classList.remove('list-sidebar-pasif');
-          dropdownParentSidebar.classList.add('list-sidebar-pasif');
-          dropdownParentSidebar.classList.remove('list-sidebar-active');
-          dropdownParentSidebar.removeAttribute('aria-current');
-        }else{
-          item.removeAttribute('aria-current');
-          item.classList.remove('list-sidebar-active');
-          item.classList.add('list-sidebar-pasif');
-        }
+
+  function syncActiveClass(target) {
+      if (navbarIndex) {
+          navbarItem.forEach((item, index) => {
+              if (index !== 1 && index !== 2) {
+                  if (item.getAttribute('data-target') === target) {
+                      item.setAttribute('aria-current', 'page');
+                      item.classList.add('li-navbar-ariaCurrent');
+                      item.classList.remove('li-navbar-before');
+                      dropdownParentNavbar.classList.add('li-button-before');
+                      dropdownParentNavbar.classList.remove('li-button-active');
+                      dropdownParentNavbar.removeAttribute('aria-current');
+                  } else {
+                      item.classList.remove('li-navbar-ariaCurrent');
+                      item.classList.add('li-navbar-before');
+                      item.removeAttribute('aria-current');
+                  }
+              } else {
+                  if (item.getAttribute('data-target') === target) {
+                      item.classList.add('list-dropdown-active');
+                      item.classList.remove('list-dropdown-pasif');
+                      dropdownParentNavbar.classList.remove('li-button-before');
+                      dropdownParentNavbar.classList.add('li-button-active');
+                      dropdownParentNavbar.setAttribute('aria-current', 'page');
+                  } else {
+                      item.classList.remove('list-dropdown-active');
+                      item.classList.add('list-dropdown-pasif');
+                  }
+              }
+          });
       } else {
-        if(item.getAttribute('data-target') === target){
-          item.classList.add('list-sidebar-active');
-          item.classList.remove('list-sidebar-pasif');
-          dropdownParentSidebar.classList.remove('list-sidebar-pasif');
-          dropdownParentSidebar.classList.add('list-sidebar-active');
-          dropdownParentSidebar.setAttribute('aria-current', 'page');
-        }else{
-          item.classList.remove('list-sidebar-active');
-          item.classList.add('list-sidebar-pasif');
-        }
+          navbarItem.forEach((item, index) => {
+              if (index !== 1 && index !== 2) {
+                  if (item.getAttribute('data-target') === target) {
+                      item.setAttribute('aria-current', 'page');
+                      item.classList.add('li-navbar-ariaCurrent');
+                      item.classList.remove('li-navbar');
+                      dropdownParentNavbar.classList.add('li-button');
+                      dropdownParentNavbar.classList.remove('li-button-active');
+                      dropdownParentNavbar.removeAttribute('aria-current');
+                  } else {
+                      item.classList.remove('li-navbar-ariaCurrent');
+                      item.classList.add('li-navbar');
+                      item.removeAttribute('aria-current');
+                  }
+              } else {
+                  if (item.getAttribute('data-target') === target) {
+                      item.classList.add('list-dropdown-active');
+                      item.classList.remove('list-dropdown-pasif');
+                      dropdownParentNavbar.classList.remove('li-button');
+                      dropdownParentNavbar.classList.add('li-button-active');
+                      dropdownParentNavbar.setAttribute('aria-current', 'page');
+                  } else {
+                      item.classList.remove('list-dropdown-active');
+                      item.classList.add('list-dropdown-pasif');
+                  }
+              }
+          });
       }
-    })
-  };
+      sidebarItem.forEach((item, index) => {
+          if (index !== 1 && index !== 2) {
+              if (item.getAttribute('data-target') === target) {
+                  item.setAttribute('aria-current', 'page');
+                  item.classList.add('list-sidebar-active');
+                  item.classList.remove('list-sidebar-pasif');
+                  dropdownParentSidebar.classList.add('list-sidebar-pasif');
+                  dropdownParentSidebar.classList.remove('list-sidebar-active');
+                  dropdownParentSidebar.removeAttribute('aria-current');
+              } else {
+                  item.removeAttribute('aria-current');
+                  item.classList.remove('list-sidebar-active');
+                  item.classList.add('list-sidebar-pasif');
+              }
+          } else {
+              if (item.getAttribute('data-target') === target) {
+                  item.classList.add('list-sidebar-active');
+                  item.classList.remove('list-sidebar-pasif');
+                  dropdownParentSidebar.classList.remove('list-sidebar-pasif');
+                  dropdownParentSidebar.classList.add('list-sidebar-active');
+                  dropdownParentSidebar.setAttribute('aria-current', 'page');
+              } else {
+                  item.classList.remove('list-sidebar-active');
+                  item.classList.add('list-sidebar-pasif');
+              }
+          }
+      });
 
-  function setActiveItem(target) {
-    localStorage.setItem('activeItem', target);
+      // Save the target to Local Storage
+      localStorage.setItem('activeTarget', target);
   }
 
-  function loadActiveItem() {
-    const activeItem = localStorage.getItem('activeItem');
-    if (activeItem) {
-      syncActiveClass(activeItem);
-    }
+  function loadActiveClass() {
+      const activeTarget = localStorage.getItem('activeTarget');
+      if (activeTarget) {
+          syncActiveClass(activeTarget);
+      }
   }
+
+  // Load the active class from Local Storage on page load
+  loadActiveClass();
 
   navbarItem.forEach(item => {
-    item.addEventListener('click', function(){
-      const target = this.getAttribute('data-target');
-      syncActiveClass(target);
-    })
+      item.addEventListener('click', function () {
+          const target = this.getAttribute('data-target');
+          syncActiveClass(target);
+      });
   });
 
   sidebarItem.forEach(item => {
-    item.addEventListener('click', function(){
-      const target = this.getAttribute('data-target');
-      syncActiveClass(target);
-    })
+      item.addEventListener('click', function () {
+          const target = this.getAttribute('data-target');
+          syncActiveClass(target);
+      });
   });
+}
 
-  setActiveItem()
-
-  loadActiveItem();
-};
 // End Sinkronisasi Navbar & Sidebar

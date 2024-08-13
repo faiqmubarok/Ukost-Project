@@ -254,113 +254,230 @@ document.addEventListener("DOMContentLoaded", function () {
 // End Search Campus Scripting
 
 // Range Slider Search
-function rangeKost() {
-  return {
-    minprice: 0,
-    maxprice: 5000000,
-    min: 0,
-    max: 5000000,
-    minthumb: 0,
-    maxthumb: 0,
+// function rangeKost() {
+//   return {
+//     minprice: 0,
+//     maxprice: 5000000,
+//     min: 0,
+//     max: 5000000,
+//     minthumb: 0,
+//     maxthumb: 0,
 
-    mintrigger() {
-      this.minprice = Math.min(this.minprice, this.maxprice - 500);
-      this.minthumb =
-        ((this.minprice - this.min) / (this.max - this.min)) * 100;
-    },
+//     mintrigger() {
+//       this.minprice = Math.min(this.minprice, this.maxprice - 500);
+//       this.minthumb =
+//         ((this.minprice - this.min) / (this.max - this.min)) * 100;
+//     },
 
-    maxtrigger() {
-      this.maxprice = Math.max(this.maxprice, this.minprice + 500);
-      this.maxthumb =
-        100 - ((this.maxprice - this.min) / (this.max - this.min)) * 100;
-    },
-    reset() {
-      this.minprice = this.min;
-      this.maxprice = this.max;
-      this.mintrigger();
-      this.maxtrigger();
-    },
-  };
+//     maxtrigger() {
+//       this.maxprice = Math.max(this.maxprice, this.minprice + 500);
+//       this.maxthumb =
+//         100 - ((this.maxprice - this.min) / (this.max - this.min)) * 100;
+//     },
+//     reset() {
+//       this.minprice = this.min;
+//       this.maxprice = this.max;
+//       this.mintrigger();
+//       this.maxtrigger();
+//     },
+//   };
+// }
+
+function formatRupiah(angka) {
+  let reverse = angka.toString().split('').reverse().join('');
+  let ribuan = reverse.match(/\d{1,3}/g);
+  ribuan = ribuan.join('.').split('').reverse().join('');
+  return ribuan;
+}
+
+function updateTrackAndThumbs(slider) {
+  const { minRange, maxRange, track, minThumb, maxThumb, minInput, maxInput, min, max } = slider;
+  const minVal = parseInt(minRange.value);
+  const maxVal = parseInt(maxRange.value);
+
+  const minPercent = ((minVal - min) / (max - min)) * 100;
+  const maxPercent = ((maxVal - min) / (max - min)) * 100;
+
+  track.style.left = minPercent + "%";
+  track.style.right = 100 - maxPercent + "%";
+
+  minThumb.style.left = minPercent + "%";
+  maxThumb.style.left = maxPercent + "%";
+
+  minInput.value = formatRupiah(minVal);
+  maxInput.value = formatRupiah(maxVal);
+}
+
+function syncMinRange(slider) {
+  const { minRange, maxRange, minInput, step } = slider;
+  const minVal = Math.min(
+    parseInt(minInput.value.replace(/\./g, '')) || 0,
+    parseInt(maxRange.value) - step,
+  );
+  minRange.value = minVal;
+  minInput.value = formatRupiah(minVal);
+  updateTrackAndThumbs(slider);
+}
+
+function syncMaxRange(slider) {
+  const { minRange, maxRange, maxInput, step, max } = slider;
+  const maxVal = Math.max(
+    parseInt(maxInput.value.replace(/\./g, '')) || max,
+    parseInt(minRange.value) + step,
+  );
+  maxRange.value = maxVal;
+  maxInput.value = formatRupiah(maxVal);
+  updateTrackAndThumbs(slider);
+}
+
+function enforceMinMax(slider) {
+  const { minRange, maxRange, step } = slider;
+  if (parseInt(minRange.value) > parseInt(maxRange.value) - step) {
+    minRange.value = parseInt(maxRange.value) - step;
+  }
+  if (parseInt(maxRange.value) < parseInt(minRange.value) + step) {
+    maxRange.value = parseInt(minRange.value) + step;
+  }
+  updateTrackAndThumbs(slider);
+}
+
+function initializeSliders(slider) {
+  const { minRange, maxRange, minInput, maxInput, min, max, step } = slider;
+
+  minRange.min = min;
+  minRange.max = max;
+  minRange.step = step;
+  minRange.value = min;
+
+  maxRange.min = min;
+  maxRange.max = max;
+  maxRange.step = step;
+  maxRange.value = max;
+
+  minInput.maxLength = max.toString().length;
+  maxInput.maxLength = max.toString().length;
+
+  updateTrackAndThumbs(slider);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const minRange = document.getElementById("min-range");
-  const maxRange = document.getElementById("max-range");
-  const minInput = document.getElementById("min-input");
-  const maxInput = document.getElementById("max-input");
-  const track = document.getElementById("track");
-  const minThumb = document.getElementById("min-thumb");
-  const maxThumb = document.getElementById("max-thumb");
-  const min = 0;
-  const max = 5000000;
-  const step = 100000;
+  const sliderBulanan = {
+    minRange: document.getElementById("min-range-bulanan"),
+    maxRange: document.getElementById("max-range-bulanan"),
+    minInput: document.getElementById("min-input-bulanan"),
+    maxInput: document.getElementById("max-input-bulanan"),
+    track: document.getElementById("track-bulanan"),
+    minThumb: document.getElementById("min-thumb-bulanan"),
+    maxThumb: document.getElementById("max-thumb-bulanan"),
+    min: 0,
+    max: 5000000,
+    step: 100000
+  };
 
-  function updateTrackAndThumbs() {
-    const minVal = parseInt(minRange.value);
-    const maxVal = parseInt(maxRange.value);
+  const sliderTahunan = {
+    minRange: document.getElementById("min-range-tahunan"),
+    maxRange: document.getElementById("max-range-tahunan"),
+    minInput: document.getElementById("min-input-tahunan"),
+    maxInput: document.getElementById("max-input-tahunan"),
+    track: document.getElementById("track-tahunan"),
+    minThumb: document.getElementById("min-thumb-tahunan"),
+    maxThumb: document.getElementById("max-thumb-tahunan"),
+    min: 0,
+    max: 50000000,
+    step: 1000000
+  };
 
-    const minPercent = ((minVal - min) / (max - min)) * 100;
-    const maxPercent = ((maxVal - min) / (max - min)) * 100;
+  initializeSliders(sliderBulanan);
+  initializeSliders(sliderTahunan);
 
-    track.style.left = minPercent + "%";
-    track.style.right = 100 - maxPercent + "%";
-
-    minThumb.style.left = minPercent + "%";
-    maxThumb.style.left = maxPercent + "%";
-
-    minInput.value = minVal;
-    maxInput.value = maxVal;
-  }
-
-  function syncMinRange() {
-    const minVal = Math.min(
-      parseInt(minInput.value) || 0,
-      parseInt(maxRange.value) - step,
-    );
-    minRange.value = minVal;
-    minInput.value = minVal;
-    updateTrackAndThumbs();
-  }
-
-  function syncMaxRange() {
-    const maxVal = Math.max(
-      parseInt(maxInput.value) || max,
-      parseInt(minRange.value) + step,
-    );
-    maxRange.value = maxVal;
-    maxInput.value = maxVal;
-    updateTrackAndThumbs();
-  }
-
-  function enforceMinMax() {
-    if (parseInt(minRange.value) > parseInt(maxRange.value) - step) {
-      minRange.value = parseInt(maxRange.value) - step;
-    }
-    if (parseInt(maxRange.value) < parseInt(minRange.value) + step) {
-      maxRange.value = parseInt(minRange.value) + step;
-    }
-    updateTrackAndThumbs();
-  }
-
-  minRange.addEventListener("input", function () {
-    enforceMinMax();
+  // Event listeners for sliderBulanan
+  sliderBulanan.minRange.addEventListener("input", function () {
+    enforceMinMax(sliderBulanan);
   });
 
-  maxRange.addEventListener("input", function () {
-    enforceMinMax();
+  sliderBulanan.maxRange.addEventListener("input", function () {
+    enforceMinMax(sliderBulanan);
   });
 
-  minInput.addEventListener("input", function () {
-    syncMinRange();
+  sliderBulanan.minInput.addEventListener("input", function () {
+    syncMinRange(sliderBulanan);
   });
 
-  maxInput.addEventListener("input", function () {
-    syncMaxRange();
+  sliderBulanan.maxInput.addEventListener("input", function () {
+    syncMaxRange(sliderBulanan);
   });
 
-  // Initial update
-  updateTrackAndThumbs();
+  // Event listeners for sliderTahunan
+  sliderTahunan.minRange.addEventListener("input", function () {
+    enforceMinMax(sliderTahunan);
+  });
+
+  sliderTahunan.maxRange.addEventListener("input", function () {
+    enforceMinMax(sliderTahunan);
+  });
+
+  sliderTahunan.minInput.addEventListener("input", function () {
+    syncMinRange(sliderTahunan);
+  });
+
+  sliderTahunan.maxInput.addEventListener("input", function () {
+    syncMaxRange(sliderTahunan);
+  });
 });
+
+const range = document.getElementById('steps-range');
+const rangeValue = document.getElementById('range-value');
+
+  // Function to format number to Indonesian currency
+  // function formatRupiah(angka) {
+  //   var number_string = angka.toString().replace(/[^,\d]/g, ''),
+  //     split = number_string.split(','),
+  //     sisa = split[0].length % 3,
+  //     rupiah = split[0].substr(0, sisa),
+  //     ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+  //   if (ribuan) {
+  //     separator = sisa ? '.' : '';
+  //     rupiah += separator + ribuan.join('.');
+  //   }
+
+  //   rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+  //   return 'Rp ' + rupiah;
+  // }
+
+  // Update the value of number input when the range input changes
+  // range.addEventListener('input', () => {
+  //   rangeValue.value = formatRupiah(range.value);
+  // });
+
+  // // Update the value of range input when the number input changes
+  // rangeValue.addEventListener('input', () => {
+  //   // Remove non-digit characters
+  //   const value = rangeValue.value.replace(/\D/g, '');
+  //   // Update range value
+  //   range.value = value;
+  //   // Format and display value with currency format
+  //   rangeValue.value = formatRupiah(value);
+  // });
+
+  // // Format initial value
+  // rangeValue.value = formatRupiah(range.value);
+
+  // // Update the slider when input value changes
+  // rangeValue.addEventListener('change', () => {
+  //   const value = rangeValue.value.replace(/\D/g, ''); // Remove non-digit characters
+  //   range.value = value;
+  // });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -368,6 +485,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // Range Slider Search
 
 // See More in search feature
+
+
+
+
 let btnSeeMore = document.querySelectorAll("[btn-see-more]");
 btnSeeMore.forEach((button) => {
   button.addEventListener("click", function () {
@@ -441,11 +562,14 @@ function handleProductTypeChange() {
   let jumlahKamarMandi = document.getElementById("jumlah-kamar-mandi");
   let peraturanKost = document.getElementById("peraturan-kost");
   let rangeJudul = document.getElementById("judul-range");
-  let rangeKost = document.getElementById("range-kost");
-  let rangeKontrakan = document.getElementById("range-kontrakan");
 
   if (this.checked && this.id === "Kontrakan") {
-    hideElements([gender, fasilitasUmum, fasilitasKamar, peraturanKost]);
+    hideElements([
+      gender, 
+      fasilitasUmum, 
+      fasilitasKamar, 
+      peraturanKost
+    ]);
     showElements([
       fasilitasBersama,
       fasilitasKontrakan,
@@ -453,10 +577,15 @@ function handleProductTypeChange() {
       jumlahKamarMandi,
     ]);
     rangeJudul.innerHTML = "Harga per tahun";
-    toggleElements([rangeKost, rangeKontrakan]);
-    resetFilter();
+    initializeSlider(slider, kontrakanMax, kontrakanStep);
+    
   } else {
-    showElements([gender, fasilitasUmum, fasilitasKamar, peraturanKost]);
+    showElements([
+      gender, 
+      fasilitasUmum, 
+      fasilitasKamar, 
+      peraturanKost
+    ]);
     hideElements([
       fasilitasBersama,
       fasilitasKontrakan,
@@ -464,8 +593,7 @@ function handleProductTypeChange() {
       jumlahKamarMandi,
     ]);
     rangeJudul.innerHTML = "Harga per bulan";
-    toggleElements([rangeKost, rangeKontrakan]);
-    resetFilter();
+    initializeSlider(slider, kostMax, kostStep);
   }
 }
 
@@ -502,19 +630,37 @@ document.getElementsByName("Tipe-Produk").forEach((element) => {
 document.getElementById("reset-button").addEventListener("click", resetFilter);
 
 function resetFilter() {
-  const selectedRadio = document.querySelector(
-    'input[name="Tipe-Produk"]:checked',
-  );
+  const selectedRadio = document.querySelector('input[name="Tipe-Produk"]:checked',);
   const selectedValue = selectedRadio ? selectedRadio.value : null;
 
   document.getElementById("search-filter-form").reset();
 
-  if (selectedValue) {
-    document.querySelector(
-      `input[name="Tipe-Produk"][value="${selectedValue}"]`,
-    ).checked = true;
-  }
+  document.querySelector(`input[name="Tipe-Produk"][value="${selectedValue}"]`,).checked = true;
+
   listGenderSearch.forEach((element) => {
     updateLabelStyle(element);
   });
+
+  // minRange.value = 0;
+  // maxRange.value = 50000000;
+  // minInput.value = 0;
+  // maxInput.value = 50000000;
+  // step = 1000000;
+  // updateTrackAndThumbs();
+
+  // if(selectedValue === 'Kontrakan'){
+  //   minRange.value = 0;
+  //   maxRange.value = 50000000;
+  //   minInput.value = 0;
+  //   maxInput.value = 50000000;
+  //   step = 1000000;
+  //   updateTrackAndThumbs();
+  // }else if(selectedValue === 'Kost'){
+  //   minRange.value = 0;
+  //   maxRange.value = 5000000;
+  //   minInput.value = 0;
+  //   maxInput.value = 5000000;
+  //   step = 100000;
+  //   updateTrackAndThumbs();
+  // }
 }
