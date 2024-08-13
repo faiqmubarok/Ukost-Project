@@ -24,7 +24,7 @@
 <body class="overflow-hidden font-poppins">
   <!-- Start Navbar -->
   <nav id="navbar" class="fixed start-0 top-0 z-30 w-full bg-transparent">
-    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-5 p-4">
+    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-5 px-3 py-4 md:px-8 lg:px-16">
       <!-- Button Back -->
       <button id="btn-back" type="button"
         class="hidden h-10 w-10 items-center justify-center rounded-lg p-2 text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden">
@@ -63,7 +63,7 @@
               class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white font-normal shadow">
               <ul class="py-2 text-sm font-medium text-gray-700" aria-labelledby="dropdownLargeButton">
                 <li>
-                  <a href="#" class="list-dropdown-pasif" navbar-item data-target="Kost">
+                  <a href="allProduct.html" class="list-dropdown-pasif" navbar-item data-target="Kost">
                     <svg class="h-5 w-5" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -74,7 +74,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="list-dropdown-pasif" navbar-item data-target="Kontrakan">
+                  <a href="allProduct.html" class="list-dropdown-pasif" navbar-item data-target="Kontrakan">
                     <svg class="h-5 w-5" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_78_22)">
@@ -214,7 +214,7 @@
     <div class="overflow-y-auto py-2">
       <ul class="space-y-2 font-medium mb-2">
         <li>
-          <a href="#" class="group list-sidebar-active" sidebar-item data-target="Beranda" aria-current="page">
+          <a href="index.html" class="group list-sidebar-active" sidebar-item data-target="Beranda" aria-current="page">
             <svg class="h-5 w-5 transition duration-75" width="20" height="20"
               aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -242,7 +242,7 @@
           </button>
           <ul id="dropdown-example" class="hidden space-y-2 py-2">
             <li>
-              <a href="#" class="group list-sidebar-pasif" sidebar-item data-target="Kost">
+              <a href="allProduct.html" class="group list-sidebar-pasif" sidebar-item data-target="Kost">
                 <svg class="h-5 w-5 transition duration-75" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -253,7 +253,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="group list-sidebar-pasif" sidebar-item data-target="Kontrakan">
+              <a href="allProduct.html" class="group list-sidebar-pasif" sidebar-item data-target="Kontrakan">
                 <svg class="h-5 w-5 transition duration-75 " width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_78_22)">
@@ -634,7 +634,7 @@
               placeholder="Masukkan nama lokasi / daerah / tempat..." />
           </div>
           <!-- Default -->
-          <div id="default-search-engine" class="hidden rounded-lg border bg-white px-2 text-gray-700">
+          <div id="default-search-engine" class=" rounded-lg border bg-white px-2 text-gray-700">
             <div class="border-b border-gray-200 text-center text-sm font-medium text-gray-700">
               <ul class="-mb-px flex flex-wrap" list-search>
                 <li class="me-2">
@@ -649,27 +649,34 @@
               Pencarian Popular
             </div>
             <div class="flex flex-wrap gap-3 py-3 text-sm" search-category>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>Unsoed 1</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="Unsoed 1" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>Telkom Purwokerto</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="Telkom Purwokerto" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>UMP</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="UMP" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>UIN</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="UIN" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>Amikom</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="Amikom" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>Unwiku</span>
-              </a>
-              <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
+                <input type="text" value="Unwiku" class="hidden">
+              </label>
+              <label class="rounded-full border p-2 hover:bg-gray-100 cursor-pointer">
                 <span>UHB</span>
-              </a>
+                <input type="text" value="UHB" class="hidden">
+              </label>
             </div>
             <div class="hidden flex-wrap gap-3 py-3 text-sm" search-category>
               <a href="#" class="rounded-full border p-2 hover:bg-gray-100">
@@ -692,6 +699,21 @@
               </a>
             </div>
           </div>
+          <!-- Seach -->
+          <div class="rounded-lg border bg-white px-2 text-gray-700">
+            <!-- Tempat -->
+            <p class="mb-2 text-base font-medium">Tempat</p>
+            <label for="Kost_Margin" class="flex w-full items-center gap-3 rounded-lg p-1 text-sm hover:bg-gray-100 cursor-pointer" for="">
+              <img class="h-10 w-10 rounded-md object-cover" src="/assets/product-1.png" alt="" />
+                <div class="flex flex-col justify-start">
+                  <span class="font-semibold">Kos Sinar Harapan</span>
+                  <span class="text-xs">Grender, Purwokerto Utara</span>
+                </div>
+              <input id="Kost_Margin" value="Kost_Margin" type="text" class="hidden">
+            </label>
+            <!-- Lokasi -->
+            <p class="mb-2 text-base font-medium">Lokasi</p>
+          </div>
           <!-- Tempat -->
           <div class="hidden rounded-lg border bg-white p-2 text-gray-700">
             <p class="mb-2 text-base font-medium">Tempat</p>
@@ -713,7 +735,7 @@
             </div>
           </div>
           <!-- Lokasi -->
-          <div class="rounded-lg border bg-white p-2 text-gray-700">
+          <div class="hidden rounded-lg border bg-white p-2 text-gray-700">
             <p class="mb-2 text-base font-medium">Lokasi</p>
             <div class="flex-row">
               <a href="" class="flex w-full items-center gap-3 rounded-lg p-1 text-sm hover:bg-gray-100">
@@ -845,38 +867,69 @@
               </li>
             </ul>
 
-            <div id="range-kost" class="flex items-center justify-center">
+            <div id="range-bulanan" class="flex items-center justify-center">
               <div class="relative w-full max-w-xl">
-                <div>
-                  <input type="range" id="min-range" step="100000" min="0" max="5000000" value="0"
-                    class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
-                  <input type="range" id="max-range" step="100000" min="0" max="5000000" value="5000000"
-                    class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
-                  <div class="relative z-10 h-2">
+                <div class="pr-1">
+                  <input type="range" id="min-range-bulanan" class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
+                  <input type="range" id="max-range-bulanan" class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
+                  <div class="relative z-10 h-2 w-full">
                     <div class="absolute bottom-0 left-0 right-0 top-0 z-10 rounded-md bg-gray-200"></div>
-                    <div id="track" class="absolute bottom-0 top-0 z-20 rounded-md bg-bluePrimary"></div>
-                    <div id="min-thumb"
-                      class="absolute left-0 top-0 z-30 -ml-4 -mt-2 mr-2 h-6 w-6 translate-x-1 rounded-full bg-bluePrimary">
-                    </div>
-                    <div id="max-thumb"
-                      class="absolute right-0 top-0 z-30 -mr-10 -mt-2 h-6 w-6 -translate-x-6 rounded-full bg-bluePrimary">
-                    </div>
+                    <div id="track-bulanan" class="absolute bottom-0 top-0 z-20 rounded-md bg-bluePrimary"></div>
+                    <div id="min-thumb-bulanan" class="absolute left-0 top-0 z-30 -ml-1 -mt-2 h-6 w-6 rounded-full bg-bluePrimary"></div>
+                    <div id="max-thumb-bulanan" class="absolute right-0 -translate-x-3 top-0 z-30 -mr-1 -mt-2 h-6 w-6 rounded-full bg-bluePrimary"></div>
                   </div>
                 </div>
                 <div class="flex items-center justify-between py-5 text-sm">
                   <div>
                     <span class="mr-2">Rp. </span>
-                    <input type="text" id="min-input" name="budget_min_kost" maxlength="7"
-                      class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
+                    <input type="text" id="min-input-bulanan" name="budget_min_kost" class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
                   </div>
                   <div>
                     <span class="mr-2">Rp. </span>
-                    <input type="text" id="max-input" name="budget_max_kost" maxlength="7"
-                      class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
+                    <input type="text" id="max-input-bulanan" name="budget_max_kost" class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
                   </div>
                 </div>
               </div>
             </div>
+            
+            <div id="range-tahunan" class="flex items-center justify-center mt-10">
+              <div class="relative w-full max-w-xl">
+                <div class="pr-1">
+                  <input type="range" id="min-range-tahunan" class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
+                  <input type="range" id="max-range-tahunan" class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0" />
+                  <div class="relative z-10 h-2 w-full">
+                    <div class="absolute bottom-0 left-0 right-0 top-0 z-10 rounded-md bg-gray-200"></div>
+                    <div id="track-tahunan" class="absolute bottom-0 top-0 z-20 rounded-md bg-bluePrimary"></div>
+                    <div id="min-thumb-tahunan" class="absolute left-0 top-0 z-30 -ml-1 -mt-2 h-6 w-6 rounded-full bg-bluePrimary"></div>
+                    <div id="max-thumb-tahunan" class="absolute right-0 -translate-x-3 top-0 z-30 -mr-1 -mt-2 h-6 w-6 rounded-full bg-bluePrimary"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between py-5 text-sm">
+                  <div>
+                    <span class="mr-2">Rp. </span>
+                    <input type="text" id="min-input-tahunan" name="budget_min_kontrakan" class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
+                  </div>
+                  <div>
+                    <span class="mr-2">Rp. </span>
+                    <input type="text" id="max-input-tahunan" name="budget_max_kontrakan" class="w-32 rounded border border-gray-200 px-3 py-2 text-center" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <!-- <label for="steps-range" class="block mb-2 text-sm font-medium text-gray-900">Range steps</label>
+<input id="steps-range" type="range" min="0" max="5000000" value="0" step="100000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+<input id="range-value" type="text" class="w-full mt-2 px-3 py-2 placeholder-gray-300 border rounded-lg focus:shadow-outline" /> -->
+
+            
+            
+            
+            
+            
+          
+          
+          
 
             <!-- <div id="range-kost" class="flex items-center justify-center">
               <div x-data="rangeKost()" x-init="mintrigger(); maxtrigger()" class="relative w-full max-w-xl">
@@ -911,7 +964,7 @@
                 </div>
               </div>
             </div> -->
-            <div id="range-kontrakan" class="hidden items-center justify-center">
+            <!-- <div id="range-kontrakan" class="hidden items-center justify-center">
               <div x-data="rangeKontrakan()" x-init="mintrigger(); maxtrigger()" class="relative w-full max-w-xl">
                 <div>
                   <input type="range" step="1000000" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
@@ -943,7 +996,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <hr />
           <!-- Kamar -->
@@ -1423,7 +1476,7 @@
   <main>
     <!-- Start Jumbotron -->
     <section class="bg-gray-500 bg-[url('/assets/beranda.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply">
-      <div class="container-section mx-auto max-w-screen-xl px-4 py-24">
+      <div class="container-section mx-auto max-w-screen-xl px-3 md:px-8 lg:px-16 py-24">
         <div class="mb-5 flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:pb-5">
           <!-- Tagline -->
           <div class="container-tagline mb-2">
@@ -1684,7 +1737,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="allProduct.html" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-1.png"
@@ -1735,7 +1788,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-3.webp"
@@ -1785,7 +1838,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-4.jpg"
@@ -1835,7 +1888,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-5.webp"
@@ -1888,7 +1941,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-6.jpg"
@@ -1940,7 +1993,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-7.jpg"
@@ -1990,7 +2043,7 @@
               </div>
               <div
                 class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-[#3A3734] text-white shadow-md hover:bg-[#302E2C]">
-                <a href="" class="group relative block overflow-hidden">
+                <a href="product.html" class="group relative block overflow-hidden">
                   <!-- Gambar -->
                   <div class="h-44 w-[300px] overflow-hidden">
                     <img loading="lazy" src="/assets/product-8.webp"
@@ -2083,12 +2136,12 @@
     <!-- Start Content -->
     <div class="mx-auto -mt-10 rounded-[40px] bg-white py-6">
       <!-- Start Search Campus -->
-      <div class="mx-auto w-full max-w-screen-xl px-3 py-8">
+      <div class="mx-auto w-full max-w-screen-xl px-3 py-8 md:px-8 lg:px-16">
         <div class="mb-7">
-          <h1 id="judul-search-campus" class="text-start text-xl font-semibold md:text-2xl">
+          <h1 id="judul-search-campus" class="text-start text-xl font-semibold md:text-2xl flex flex-wrap gap-3 items-center">
             <span>Cari Kos Sekitar Kampus di</span>
             <select id="city"
-              class="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-xl text-gray-900 focus:border-bluePrimary focus:ring-bluePrimary">
+              class="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-xl text-gray-900 focus:border-bluePrimary focus:ring-bluePrimary w-full md:w-fit">
               <option selected value="Purwokerto">Purwokerto</option>
               <option value="Jakarta">Jakarta</option>
               <option value="Bandung">Bandung</option>
@@ -2196,14 +2249,19 @@
       <!-- End Search Campus -->
 
       <!-- Start Search Budget -->
-      <div class="mx-auto w-full max-w-screen-xl px-3 py-8">
-        <div class="mb-7">
+      <div class="mx-auto w-full max-w-screen-xl px-3 py-8 md:px-8 lg:px-16">
+        <div class="mb-5 md:mb-7">
           <h1 id="judul-search-budget" class="text-start text-xl font-semibold md:text-2xl">
             Cari Kos Sesuai Budgetmu
           </h1>
         </div>
-        <div class="mb-5 text-center text-sm font-medium text-gray-500">
+        <div class="mb-5 text-center text-sm font-medium text-gray-500 flex items-center gap-3 flex-wrap">
           <!-- Category Budget -->
+          <select id="Budget-Kost"
+              class="rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-xl text-gray-900 focus:border-bluePrimary focus:ring-bluePrimary w-full md:w-fit">
+              <option selected value="Bulanan">Bulanan</option>
+              <option value="Tahunan">Tahunan</option>
+          </select>
           <ul id="list-category-budget-kost" class="flex w-fit flex-wrap gap-2">
             <li>
               <a class="list-budget-active">
@@ -2467,7 +2525,7 @@
             <!-- Kost Item -->
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-2.png"
@@ -2487,11 +2545,11 @@
                       </svg>
                       <span class="text-xs">4.3</span>
                     </div>
-                    <span class="rounded-md bg-blue-500 px-2 py-1 text-xs font-medium text-white">Pria</span>
+                    <span class="rounded-md bg-pink-500 px-2 py-1 text-xs font-medium text-white">Wanita</span>
                   </div>
                   <!-- Nama Kost & Lokasi -->
                   <div class="mb-4">
-                    <h5 class="text-base font-medium">Kos Sinar Harapan</h5>
+                    <h5 class="text-base font-medium">Kos Serasi Abadi</h5>
                     <span class="flex items-center gap-1">
                       <svg class="h-5 w-5 text-gray-500" width="20" height="20" viewBox="0 0 20 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -2511,14 +2569,14 @@
                   <div class="flex items-center justify-between">
                     <span class="font-semibold text-bluePrimary">Rp 3.500.000
                       <span class="font-normal">/Bulan</span></span>
-                    <span class="text-right text-xs text-red-500">Sisa 3 Kamar</span>
+                    <span class="text-right text-xs text-red-500">Sisa 1 Kamar</span>
                   </div>
                 </div>
               </a>
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-1.png"
@@ -2569,7 +2627,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-3.webp"
@@ -2619,7 +2677,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-4.jpg"
@@ -2669,7 +2727,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-200">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-5.webp"
@@ -2722,7 +2780,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-6.jpg"
@@ -2774,7 +2832,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-7.jpg"
@@ -2824,7 +2882,7 @@
             </div>
             <div
               class="group h-auto max-w-[300px] flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-md hover:bg-gray-100">
-              <a href="" class="group relative block overflow-hidden">
+              <a href="product.html" class="group relative block overflow-hidden">
                 <!-- Gambar -->
                 <div class="h-44 w-[300px] overflow-hidden">
                   <img loading="lazy" src="/assets/product-8.webp"
@@ -2958,7 +3016,7 @@
       <!-- End Review -->
 
       <!-- Start Jasa -->
-      <div id="jasa" class="mx-auto w-full max-w-screen-xl px-3 py-8">
+      <div id="jasa" class="mx-auto w-full max-w-screen-xl px-3 py-8 md:px-8 lg:px-16">
         <div class="mb-7">
           <h1 class="text-start text-xl font-semibold md:text-2xl">
             Dapatkan bantuan kami
@@ -3072,16 +3130,16 @@
   <!-- End main -->
 
   <!-- Start Footer -->
-  <footer class="bg-[#EDEDED]">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+  <footer class="bg-[#EDEDED] ">
+    <div class="mx-auto w-full max-w-screen-xl px-3 md:px-8 lg:px-16 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
-          <a href="#" class="items-center">
-            <img src="/assets/LogoMemanjang.png" class="-ms-5 me-3 h-20 md:ms-0" alt="U Kost Logo" />
+          <a href="index.html" class="items-center">
+            <img src="/assets/LogoMemanjang.png" class="-ms-3 me-3 h-20 md:ms-0" alt="U Kost Logo" />
           </a>
           <span class="font- text-lg italic leading-none tracking-tight text-gray-500 md:ms-3">#TheBestKostForU</span>
         </div>
-        <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+        <div class="grid grid-cols-2 gap-8 md:gap-4 lg:gap-8 sm:grid-cols-3">
           <div>
             <h2 class="mb-5 text-sm font-semibold uppercase text-bluePrimary">
               Informasi

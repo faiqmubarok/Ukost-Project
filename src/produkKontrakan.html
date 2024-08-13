@@ -30,7 +30,7 @@
 <body class="overflow-hidden font-poppins">
   <!-- Start Navbar -->
   <nav id="navbar" class="fixed start-0 top-0 z-30 w-full bg-transparent md:bg-[#EDEDED] md:shadow-md">
-    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-5 p-4">
+    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-5 py-4 px-3 md:px-8 lg:px-16">
       <button id="btn-back" type="button"
         class="h-10 w-10 items-center justify-center rounded-lg p-2 text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden inline-flex">
         <svg class="h-7 w-7" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +122,7 @@
         </ul>
         <!-- Button Sidebar -->
         <button id="btn-sidebar" type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden md:text-gray-500"
           data-drawer-target="drawer-sidebar" data-drawer-show="drawer-sidebar" data-drawer-placement="right"
           aria-controls="drawer-sidebar">
           <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -264,7 +264,7 @@
   <!-- Start Bottom Bar -->
   <div
     class="border2 fixed bottom-0 left-0 z-[25] h-[110px] w-full border-t border-gray-200 bg-white shadow-md md:hidden">
-    <div class="mx-auto h-full max-w-lg space-y-3 px-4 py-4">
+    <div class="mx-auto h-full max-w-lg space-y-3 px-3 py-4">
       <div class="flex items-center justify-between">
         <p class="text-base font-semibold text-gray-700">
           Rp 2.700.000 <span class="font-normal">/ 3 Bulan</span>
@@ -703,11 +703,12 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
+  <!-- End Skeleton Loading -->
 
   <!-- Start Skeleton Bottom Bar -->
   <div id="skeleton-bottom-bar"
     class="border2 fixed bottom-0 left-0 z-[25] h-[110px] w-full border-t border-gray-200 bg-white shadow-md md:hidden">
-    <div class="mx-auto h-full max-w-lg space-y-3 px-4 py-4">
+    <div class="mx-auto h-full max-w-lg space-y-3 px-3 py-4">
       <div class="flex items-center justify-between">
         <div class="mb-2.5 h-3 w-[160px] rounded-full bg-gray-200"></div>
         <div class="mb-2.5 h-2 w-[120px] rounded-full bg-gray-200"></div>
@@ -723,13 +724,13 @@
   <!-- Start Skeleton -->
   <main id="skeleton-content" role="status" class="animate-pulse md:mt-24">
     <!-- Breadcrumb -->
-    <div class="mx-auto hidden w-full max-w-screen-xl px-4 py-4 md:block">
+    <div class="mx-auto hidden w-full max-w-screen-xl py-4 px-3 md:px-8 lg:px-16 md:block">
       <div class="mb-2.5 h-2 max-w-[480px] rounded-full bg-gray-200"></div>
     </div>
 
     <!-- Gallery -->
     <div class="">
-      <div class="mx-auto w-full max-w-screen-xl md:px-4 md:py-5">
+      <div class="mx-auto w-full max-w-screen-xl  md:px-8 lg:px-16 md:py-5">
         <div class="grid-cols-2 gap-2 overflow-hidden md:grid md:rounded-lg">
           <div class="flex h-64 w-full items-center justify-center bg-gray-300 md:h-full">
             <svg class="h-10 w-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -739,28 +740,28 @@
             </svg>
           </div>
           <div class="hidden grid-cols-2 gap-2 md:grid">
-            <div class="flex w-full items-center justify-center bg-gray-300 md:h-24 lg:h-52">
+            <div class="flex w-full items-center justify-center bg-gray-300 md:h-40 lg:h-48">
               <svg class="h-10 w-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 18">
                 <path
                   d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
               </svg>
             </div>
-            <div class="flex w-full items-center justify-center bg-gray-300 md:h-24 lg:h-52">
+            <div class="flex w-full items-center justify-center bg-gray-300 md:h-40 lg:h-48">
               <svg class="h-10 w-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 18">
                 <path
                   d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
               </svg>
             </div>
-            <div class="flex w-full items-center justify-center bg-gray-300 md:h-24 lg:h-52">
+            <div class="flex w-full items-center justify-center bg-gray-300 md:h-40 lg:h-48">
               <svg class="h-10 w-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 18">
                 <path
                   d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
               </svg>
             </div>
-            <div class="flex w-full items-center justify-center bg-gray-300 md:h-24 lg:h-52">
+            <div class="flex w-full items-center justify-center bg-gray-300 md:h-40 lg:h-48">
               <svg class="h-10 w-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 18">
                 <path
@@ -773,7 +774,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="mx-auto w-full max-w-screen-xl px-4 pb-24 pt-5 md:pb-5">
+    <div class="mx-auto w-full max-w-screen-xl pb-24 pt-5 md:pb-5 px-3 md:px-8 lg:px-16">
       <div class="flex gap-5">
         <section class="w-full md:w-3/5">
           <div class="space-y-3 py-5">
@@ -1019,7 +1020,7 @@
               <div class="mb-3 h-3 max-w-[300px] rounded-full bg-gray-200"></div>
               <div class="h-2 max-w-[200px] rounded-full bg-gray-200"></div>
             </div>
-            <div id="skeleton-other-type" class="flex items-center gap-4 overflow-x-scroll py-2">
+            <div id="skeleton-other-type" class="flex items-center gap-4 overflow-x-scroll py-2" style="scrollbar-width: 0px;">
               <div role="status"
                 class="group h-fit w-full max-w-[300px] flex-shrink-0 animate-pulse overflow-hidden rounded-lg bg-white shadow-md">
                 <a class="group relative block overflow-hidden">
@@ -1104,7 +1105,7 @@
       <div class="py-7">
         <div class="mb-3 h-2.5 w-[250px] rounded-full bg-gray-200"></div>
         <div class="mb-5 h-2 w-[200px] rounded-full bg-gray-200"></div>
-        <div class="flex items-center gap-4 overflow-hidden overflow-x-scroll scroll-smooth rounded-lg py-2">
+        <div id="card-recomendation-skeleton" class="flex items-center gap-4 overflow-hidden overflow-x-scroll scroll-smooth rounded-lg py-2">
           <div role="status"
             class="group h-fit w-full max-w-[300px] flex-shrink-0 animate-pulse overflow-hidden rounded-lg bg-white shadow-md">
             <a class="group relative block overflow-hidden">
@@ -1232,7 +1233,7 @@
   <!-- Start Main -->
   <main id="main-content" class="hidden md:mt-24">
     <!-- BreadCrumb -->
-    <div class="mx-auto hidden w-full max-w-screen-xl px-4 py-4 md:block">
+    <div class="mx-auto hidden w-full max-w-screen-xl py-4 px-3 md:px-8 lg:px-16 md:block">
       <nav class="flex" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">
@@ -1331,13 +1332,13 @@
       <div class="swiper-pagination z-10"></div>
     </div>
     <!-- Medium -->
-    <div class="mx-auto hidden w-full max-w-screen-xl px-4 py-5 md:block">
-      <div class="relative grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-lg">
+    <div class="mx-auto hidden w-full max-w-screen-xl py-5 px-3 md:px-8 lg:px-16 md:block">
+      <div class="relative grid grid-cols-4 grid-rows-2 gap-2 overflow-hidden rounded-lg md:h-80 lg:h-[450px]">
         <!-- Child Main -->
         <div class="col-span-2 row-span-2 cursor-pointer bg-gray-200 hover:bg-blend-multiply">
           <a data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
             aria-controls="drawer-gallery">
-            <img class="h-full w-full bg-cover bg-center transition duration-300 hover:opacity-80"
+            <img class="h-full w-full bg-cover bg-center transition duration-300 hover:opacity-80 object-cover"
               src="/assets/product-1.png" alt="" />
           </a>
         </div>
@@ -1345,29 +1346,29 @@
         <div class="cursor-pointer bg-gray-300 hover:bg-blend-multiply">
           <a data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
             aria-controls="drawer-gallery">
-            <img class="h-full w-full transition duration-300 hover:opacity-80" src="/assets/product-2.png" alt="" />
+            <img class="h-full w-full transition duration-300 hover:opacity-80 object-cover" src="/assets/product-2.png" alt="" />
           </a>
         </div>
         <div class="cursor-pointer bg-gray-400 hover:bg-blend-multiply">
           <a data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
             aria-controls="drawer-gallery">
-            <img class="h-full w-full transition duration-300 hover:opacity-80" src="/assets/product-3.webp" alt="" />
+            <img class="h-full w-full transition duration-300 hover:opacity-80 object-cover" src="/assets/product-3.webp" alt="" />
           </a>
         </div>
         <div class="cursor-pointer bg-gray-500 hover:bg-blend-multiply">
           <a data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
             aria-controls="drawer-gallery">
-            <img class="h-full w-full transition duration-300 hover:opacity-80" src="/assets/product-4.jpg" alt="" />
+            <img class="h-full w-full transition duration-300 hover:opacity-80 object-cover" src="/assets/product-4.jpg" alt="" />
           </a>
         </div>
         <div class="cursor-pointer bg-gray-500 hover:bg-blend-multiply">
           <a data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
             aria-controls="drawer-gallery">
-            <img class="h-full w-full transition duration-300 hover:opacity-80" src="/assets/product-5.webp" alt="" />
+            <img class="h-full w-full transition duration-300 hover:opacity-80 object-cover" src="/assets/product-5.webp" alt="" />
           </a>
         </div>
         <button
-          class="absolute bottom-3 right-3 rounded-lg border bg-white/60 px-5 py-2.5 text-sm font-medium text-gray-700 backdrop-blur-sm transition-transform hover:bg-white/80 active:scale-95"
+          class="absolute bottom-3 right-3 rounded-lg border bg-white/60 md:px-3 lg:px-5 py-2.5 text-sm font-medium text-gray-700 backdrop-blur-sm transition-transform hover:bg-white/80 active:scale-95"
           data-drawer-target="drawer-gallery" data-drawer-show="drawer-gallery" data-drawer-placement="top"
           aria-controls="drawer-gallery">
           Lihat semua foto
@@ -1377,7 +1378,7 @@
     <!-- End Gallery -->
 
     <!-- Main Content -->
-    <div class="mx-auto w-full max-w-screen-xl px-4 pb-24 pt-5 md:pb-5">
+    <div class="mx-auto w-full max-w-screen-xl px-3 py-4 md:px-8 lg:px-16 pb-24 pt-5 md:pb-5">
       <div class="flex gap-5">
         <section class="w-full text-gray-700 md:w-3/5">
           <!-- Info Kontrakan -->
@@ -2159,7 +2160,7 @@
               </h1>
             </div>
             <div class="text-sm">
-              <div class="max-h-20 overflow-hidden text-justify">
+              <div id="catatan" class="max-h-20 overflow-hidden text-justify">
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Eligendi numquam repudiandae dolorem quas eius voluptas quis
@@ -2202,7 +2203,7 @@
                   libero aliquam, reprehenderit quo quam!
                 </p>
               </div>
-              <button class="text-bluePrimary underline" onclick="toggleReadMore(this)">
+              <button class="text-bluePrimary underline" button-see-more>
                 Baca Selengkapnya...
               </button>
             </div>
@@ -2897,15 +2898,15 @@
 
   <!-- Start Footer -->
   <footer class="hidden bg-[#EDEDED] md:block">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="mx-auto w-full max-w-screen-xl px-3 md:px-8 lg:px-16 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <a href="index.html" class="items-center">
-            <img src="/assets/LogoMemanjang.png" class="-ms-5 me-3 h-20 md:ms-0" alt="U Kost Logo" />
+            <img src="/assets/LogoMemanjang.png" class="-ms-3 me-3 h-20 md:ms-0" alt="U Kost Logo" />
           </a>
           <span class="font- text-lg italic leading-none tracking-tight text-gray-500 md:ms-3">#TheBestKostForU</span>
         </div>
-        <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+        <div class="grid grid-cols-2 gap-8 md:gap-4 lg:gap-8 sm:grid-cols-3">
           <div>
             <h2 class="mb-5 text-sm font-semibold uppercase text-bluePrimary">
               Informasi

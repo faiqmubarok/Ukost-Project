@@ -1,6 +1,6 @@
 import { initializeNavbar, sinkronNavbarSidebar } from './common-navigation.js';
 
-// Loading
+// Start Loading
 function skeletonLoading() {
   let skeletonLoading = document.getElementById("skeleton-loading");
   skeletonLoading.classList.add("hidden");
@@ -20,6 +20,7 @@ function swapContent() {
 
 setTimeout(swapContent, 1800);
 setTimeout(skeletonLoading, 800);
+// End Loading
 
 // Start Navbar Script
 document.addEventListener("DOMContentLoaded", function () {
@@ -31,42 +32,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // End Navbar Script
 
-// Drawer Checkout Mobile
-let btnCheckout = document.getElementById("checkout");
-btnCheckout.addEventListener("click", function () {
-  drawerBottomCheckout = document.getElementById("drawer-bottom-example");
-  drawerBottomCheckout.classList.remove("hidden");
-});
-
-// Scroll Rekomendation For U
+// Scroll Recomendation For U
 document.getElementById("scrollLeftBtn").addEventListener("click", function () {
   document
     .getElementById("card-recomendation")
     .scrollBy({ left: -310, behavior: "smooth" });
 });
 
-document
-  .getElementById("scrollRightBtn")
-  .addEventListener("click", function () {
-    document
-      .getElementById("card-recomendation")
-      .scrollBy({ left: 310, behavior: "smooth" });
-  });
+document.getElementById("scrollRightBtn").addEventListener("click", function (){
+    document.getElementById("card-recomendation").scrollBy({ left: 310, behavior: "smooth" });
+});
+// End Scroll Recomendation For U
 
-// Catatan Kost
-function toggleReadMore(button) {
-  var content = button.previousElementSibling;
-  if (
-    content.classList.contains("max-h-20") &&
-    content.classList.contains("overflow-hidden")
-  ) {
-    content.classList.remove("max-h-20", "overflow-hidden");
-    button.innerHTML = "Tampilkan Lebih Sedikit";
-  } else {
-    content.classList.add("max-h-20", "overflow-hidden");
-    button.innerHTML = "Baca Selengkapnya...";
-  }
-}
+// Start See More Catatan
+document.addEventListener('DOMContentLoaded', function(){
+  let button = document.querySelector('[button-see-more]');
+  let catatan = document.getElementById('catatan');
+  button.addEventListener('click', function(){
+    if(catatan.classList.contains('max-h-20') && catatan.classList.contains('overflow-hidden')){
+      catatan.classList.remove('max-h-20', 'overflow-hidden');
+      button.innerHTML = 'Tampilkan Lebih Sedikit';
+    }else{
+      catatan.classList.add('max-h-20', 'overflow-hidden');
+      button.innerHTML = 'Tampilkan Lebih Banyak';
+    }
+  })
+})
+// End See More Catatan
+
+// Drawer Checkout Mobile
+document.addEventListener('DOMContentLoaded', function(){
+  let btnCheckout = document.getElementById('checkout');
+  let drawerCheckout = document.getElementById('drawer-bottom-example');
+
+  btnCheckout.addEventListener('click', function(){
+    drawerCheckout.classList.remove('hidden');
+  })
+})
+// End Drawer Checkout Mobile
 
 // Carousel
 const carouselElement = document.getElementById("indicators-carousel");
